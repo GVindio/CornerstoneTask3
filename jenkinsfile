@@ -1,14 +1,14 @@
 pipeline {
     agent any
    tools {
-  terraform 'Terraform'
+  terraform 'terraform'
 }
 
 
     stages {
         stage('Git Checkout') {
             steps {
-                
+                git branch: 'main', credentialsId: '9e524a8f-4db9-4354-be8b-8b52b1f7cc72', url: 'https://github.com/GVindio/CornerstoneTask3.git'
             }
         }
         stage('Terraform init') {
